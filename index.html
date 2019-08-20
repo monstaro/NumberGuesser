@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+  <title>Number Guesser Game</title>
+  </head>
+  <body>
+    <section>
+      <header>
+        <h1><span class="title-bold">NUMBER</span>GUESSER</h1>
+        <h2 class="sub-header"><span class="dash"> &mdash; </span> ULTIMATE CHALLENGER EDITION <span class="dash"> &mdash; </span></h2>
+      </header>
+    </section>
+    <div class="background">
+    <section class="site-left">
+      <div class="box">
+        <h3>Set Range</h3>
+          <span class="text-input"><label for="min-range">Min range</label></span>
+            <input type="text"></input>
+            <span class="text-input"><label for="max-range">Max range</label></span>
+            <input type="text"></input>
+            <input type="button" class="button" value="UPDATE">
+
+
+
+      </div>
+      <div class="box">
+        <p>The current range is <span class="bold-underline">1 </span>to <span class="bold-underline">100 </span>
+          <h3>Challenger 1</h3>
+            <span class="text-input"><label for="name">Name</label></span>
+            <input type="text"></input>
+            <span class="text-input"><label for="guess">Guess</label></span>
+            <input type="text"></input>
+          <h3>Challenger 1</h3>
+            <span class="text-input"><label for="name">Name</label></span>
+            <input type="text"></input>
+            <span class="text-input"><label for="guess">Guess</label></span>
+            <input type="text"></input>
+            <input type="button" class="button" value="SUBMIT GUESS">
+            <input type="button" class="button" value="RESET GAME">
+            <input type="button" class="button" value="CLEAR GAME">
+        </div>
+        <div class="box">
+          <span class="guess">
+          <h3>Latest Score</h3>
+          <h4>Challenger 1 Name</h4>
+          <p>current guess</p>
+          <span class="guessed-number"> 97 </span>
+          <p class="guess-response"> that's too high </p>
+          </span>
+          <div class="vertical-line"></div>
+          <span class="guess">
+          <h4>Challenger 2 Name</h4>
+          <p>current guess</p>
+          <span class="guessed-number"> 3 </span>
+          <p class="guess-response"> that's too low </p>
+          </span>
+        </div>
+      </section>
+      <section class="site-right">
+        <div class="box">
+          <h4> CHALLENGER 1 NAME </h4> <p>VS</p>  <h4>CHALLENGER 2 NAME</h4>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
+
+
+<!-- Questions
+      1. What tag is more appropriate for this sort of text? h1/h2/h3 or p?
+      2. Regarding the upper-case elements like <header>, is it semantically better to type in regular case,
+      and style with CSS to make upper case?
+-->
