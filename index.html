@@ -16,31 +16,45 @@
     <div class="background">
     <section class="site-left">
       <div class="box">
+        <span class="text-input">
         <h3>Set Range</h3>
-          <span class="text-input"><label for="min-range">Min range</label></span>
-            <input type="text"></input>
-            <span class="text-input"><label for="max-range">Max range</label></span>
-            <input type="text"></input>
+          <label for="min-range">Min range</label>
+            <input class="textbox" type="text"></input>
+          </span>
+            <span class="text-input"><label for="max-range">Max range</label>
+            <input class="textbox" type="text"></input>
+          </span>
+          <span class="text-input">
             <input type="button" class="button" value="UPDATE">
-
+          </span>
 
 
       </div>
-      <div class="box">
-        <p>The current range is <span class="bold-underline">1 </span>to <span class="bold-underline">100 </span>
+      <div class="box-2">
+        <p id="current-range">The current range is <span class="bold-underline">1 </span>to <span class="bold-underline">100</span></p>
           <h3>Challenger 1</h3>
-            <span class="text-input"><label for="name">Name</label></span>
-            <input type="text"></input>
+          <div>
+            <span class="text-input"><label for="name">Name</label>
+            <input class="textbox-long" type="text"></input>
+            </span>
             <span class="text-input"><label for="guess">Guess</label></span>
-            <input type="text"></input>
-          <h3>Challenger 1</h3>
-            <span class="text-input"><label for="name">Name</label></span>
-            <input type="text"></input>
-            <span class="text-input"><label for="guess">Guess</label></span>
-            <input type="text"></input>
+            <input class="guess-box" type="text"></input>
+            </span>
+          </div>
+          <h3>Challenger 2</h3>
+          <div>
+            <span class="text-input"><label for="name">Name</label>
+            <input class="textbox-long" type="text"></input>
+            </span>
+            <span class="text-input"><label for="guess">Guess</label>
+            <input class="guess-box" type="text"></input>
+            </span>
+          </div>
+          <div>
             <input type="button" class="button" value="SUBMIT GUESS">
             <input type="button" class="button" value="RESET GAME">
             <input type="button" class="button" value="CLEAR GAME">
+          </div>
         </div>
         <div class="box">
           <span class="guess">
