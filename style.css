@@ -97,14 +97,35 @@ label {
 .box-2 {
   background-color: #FFFFFF;
   margin: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 5px;
+  padding: 10px;
   border-style: solid;
   border-width: 2px;
   border-color: #DEDEDE;
   display: flex;
   flex-direction: column;
+}
+
+#current-range {
+  padding-bottom: 15px;
+}
+
+.player-input {
+  padding-right: 10px;
+  width: 33%;
+}
+
+.textbox-long {
+  display: inline;
+}
+
+.guess-box {
+  display: inline;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
 }
 
 h3 {
@@ -138,19 +159,38 @@ h4 {
   border-right: 5px solid #D1D2D4;
   height: 100px;
   display: inline-block;
+}
 
+.control-button-box {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.guess-box {
+  height: 35px;
+  width: 90%;
+  border-width: 2px solid;
+}
+
+.textbox-long {
+  height: 35px;
+  border-width: 2px solid;
+  width: 185%;
 }
 
 .button {
   background-color: #6E6E6E;
   color: #FFFFFF;
   border: none;
-  padding: 8px 26px;
+  padding: 4px 26px;
   font-weight: 800;
   border-radius: 90px;
   font-size: 20px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 
