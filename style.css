@@ -107,6 +107,18 @@ label {
   flex-direction: column;
 }
 
+.textbox-long {
+  display: inline;
+}
+
+.guess-box {
+  display: inline;
+}
+
+.player-info {
+  display: flex;
+}
+
 h3 {
   font-weight: 800;
   color: #404041;
@@ -138,7 +150,12 @@ h4 {
   border-right: 5px solid #D1D2D4;
   height: 100px;
   display: inline-block;
+}
 
+.control-button-box {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
 }
 
 .button {
