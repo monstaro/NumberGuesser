@@ -7,7 +7,7 @@
   <title>Number Guesser Game</title>
   </head>
   <body>
-    <section>
+    <section id="header">
       <header>
         <h1><span class="title-bold">NUMBER</span>GUESSER</h1>
         <h2 class="sub-header"><span class="dash"> &mdash; </span> ULTIMATE CHALLENGER EDITION <span class="dash"> &mdash; </span></h2>
@@ -18,10 +18,10 @@
       <div class="box">
         <span class="text-input">
         <h3>Set Range</h3>
-          <label for="min-range">Min range</label>
+          <label for="min-range">Min Range</label>
             <input class="textbox" type="text"></input>
           </span>
-            <span class="text-input"><label for="max-range">Max range</label>
+            <span class="text-input"><label for="max-range">Max Range</label>
             <input class="textbox" type="text"></input>
           </span>
           <span class="text-input">
@@ -31,7 +31,7 @@
 
       </div>
       <div class="box-2">
-        <p id="current-range">The current range is <span class="bold-underline">1 </span>to <span class="bold-underline">100</span></p>
+        <p id="current-range">The Current Range is <span class="bold-underline">1</span> to <span class="bold-underline">100</span></p>
           <h3>Challenger 1</h3>
           <div class="player-info">
             <span class="player-input"><label for="name">Name</label>
@@ -56,18 +56,18 @@
             <input type="button" class="button" value="CLEAR GAME">
           </div>
         </div>
-        <div class="box">
+        <div class="box-3">
           <span class="guess">
-          <h3>Latest Score</h3>
+          <h3 id="latest-score">Latest Score</h3>
           <h4>Challenger 1 Name</h4>
-          <p>current guess</p>
+          <p class="current-guess">current guess</p>
           <span class="guessed-number"> 97 </span>
           <p class="guess-response"> that's too high </p>
           </span>
           <div class="vertical-line"></div>
           <span class="guess">
           <h4>Challenger 2 Name</h4>
-          <p>current guess</p>
+          <p class="current-guess">current guess</p>
           <span class="guessed-number"> 3 </span>
           <p class="guess-response"> that's too low </p>
           </span>
