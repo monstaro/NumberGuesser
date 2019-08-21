@@ -101,31 +101,35 @@ label {
 }
 
 .box-2 {
+  /*Constants*/
   background-color: #FFFFFF;
   margin: 20px;
-  padding: 10px;
   border-style: solid;
   border-width: 2px;
   border-color: #DEDEDE;
   display: flex;
+  /*Variants*/
+  padding: 10px;
   flex-direction: column;
 }
 
 .box-3 {
+  /*Constants*/
   background-color: #FFFFFF;
   margin: 20px;
-  padding-top: 5px;
-  padding-bottom: 20px;
-  padding-left: 5px;
   border-style: solid;
   border-width: 2px;
   border-color: #DEDEDE;
   display: flex;
+  /*Variants*/
+  padding-top: 5px;
+  padding-bottom: 20px;
+  padding-left: 5px;
   align-items: flex-end;
   justify-content: space-around;
 }
 
-#current-range {
+.current-range {
   padding-bottom: 15px;
   font-size: 20px;
 }
@@ -210,6 +214,11 @@ h4 {
   cursor: pointer;
 }
 
+#lightbutton {
+  background-color: #D1D2D4;
+}
+
+
 .guess {
   display: inline-block;
   text-align: center;
@@ -217,7 +226,7 @@ h4 {
   width: 45%;
 }
 
-#latest-score {
+.latest-score {
   text-align: left;
   padding-bottom: 10px;
 }
