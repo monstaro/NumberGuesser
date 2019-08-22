@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+  <title>Number Guesser Game</title>
+  </head>
   <body>
     <section id="header">
       <header>
@@ -12,8 +14,8 @@
       </header>
     </section>
     <div class="background">
-    <div class="site-left">
-    <div class="box" id="box-top-left">
+    <section class="site-left">
+      <div class="box" id="box-top-left">
         <span class="text-input">
         <h3>Set Range</h3>
           <label for="min-range">Min Range</label>
@@ -23,40 +25,40 @@
             <input class="textbox-short" type="text"></input>
           </span>
           <span class="text-input">
-            <input type="button" class="button" value="UPDATE">
+            <input type="button" class="darkbutton" value="UPDATE">
           </span>
 
 
       </div>
       <div class="box" id="box-mid-left">
-        <p class="current-range">The Current Range is <span class="bold-underline">1</span> to <span class="bold-underline">100</span></p>
+        <p id="current-range">The Current Range is <span class="bold-underline">1</span> to <span class="bold-underline">100</span></p>
           <h3>Challenger 1</h3>
-          <section class="player-info">
+          <div class="player-info">
             <span class="player-input"><label for="name">Name</label>
             <input class="textbox-long" type="text"></input>
             </span>
             <span class="player-input"><label for="guess">Guess</label>
             <input class="textbox-short" type="text"></input>
             </span>
-          </section>
+          </div>
           <h3>Challenger 2</h3>
-          <section class="player-info">
+          <div class="player-info">
             <span class="player-input"><label for="name">Name</label>
             <input class="textbox-long" type="text"></input>
             </span>
             <span class="player-input"><label for="guess">Guess</label>
             <input class="textbox-short" type="text"></input>
             </span>
-          </section>
-          <section class="control-button-box">
-            <input type="button" class="button" value="SUBMIT GUESS">
-            <input type="button" class="button" id="lightbutton" value="RESET GAME">
-            <input type="button" class="button" id="lightbutton" value="CLEAR GAME">
-          </section>
+          </div>
+          <div class="control-button-box">
+            <input type="button" class="darkbutton" value="SUBMIT GUESS">
+            <input type="button" class="lightbutton" value="RESET GAME">
+            <input type="button" class="lightbutton" value="CLEAR GAME">
+          </div>
         </div>
         <div class="box" id="box-bottom-left">
           <span class="guess">
-          <h3 class="latest-score">Latest Score</h3>
+          <h3 id="latest-score">Latest Score</h3>
           <h4>Challenger 1 Name</h4>
           <p class="current-guess">current guess</p>
           <span class="guessed-number"> 97 </span>
@@ -71,13 +73,12 @@
           </span>
         </div>
       </section>
-      </div>
-      <!-- <section class="site-right"> -->
-        <div class="box" id="site-right-boxes">
+      <section class="site-right">
+        <div class="box">
           <h4> CHALLENGER 1 NAME </h4> <p>VS</p>  <h4>CHALLENGER 2 NAME</h4>
         </div>
-      <!-- </section> -->
-
+      </section>
+    </div>
   </body>
 </html>
 

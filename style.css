@@ -2,7 +2,6 @@
    margin: 0;
    font-family: 'Open Sans', sans-serif;
    font-weight: 300;
-   height: auto;
 
 }
 
@@ -17,18 +16,17 @@ header {
   background-color: #404041;
   text-align: center;
   font-size: 36px;
-  font-weight: 300;
   color: #DD1972;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-
-/* Seems like this doesn't effect anything
+/*
+Seems like this doesn't effect anything
 input {
   display: block;
-} */
-
+}
+*/
 
 
 .title-bold {
@@ -56,7 +54,6 @@ input {
   width: 50%;
   float: left;
   background-color: #F7F7F7;
-  border-right: 2px solid #6E6E6E;
 }
 
 .site-right {
@@ -74,28 +71,23 @@ label {
   padding-top: 4px;
 }
 
+.textbox-long {
+  height: 35px;
+  border-width: 2px solid;
+  width: 185%;
+}
 
-
-
+.textbox-short {
+  width: 100%;
+  height: 35px;
+  border-width: 2px solid;
+}
 
 .text-input {
   padding-left: 10px;
   padding-right: 10px;
   width: 33%;
 }
-
-.box {
-  background-color: #FFFFFF;
-  margin: 20px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #DEDEDE;
-  display: flex;
-}
-
-/* #site-right-boxes {
-  align-items: flex-start;
-} */
 
 #box-top-left {
   padding-top: 20px;
@@ -104,21 +96,51 @@ label {
   align-items: flex-end;
 }
 
-#box-mid-left {
-  padding: 10px;
+
+#box-mid-left {padding: 10px;
   flex-direction: column;
 }
 
+
 #box-bottom-left {
+  align-items: flex-end;
+  justify-content: space-around;
   padding-top: 5px;
   padding-bottom: 20px;
   padding-left: 5px;
-  align-items: flex-end;
-  justify-content: space-around;
 }
 
+.box {
+  /*Constants*/
+  background-color: #FFFFFF;
+  margin: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #DEDEDE;
+  display: flex;
+  /*Variants*/
+}
 
-.current-range {
+/* .box-2 {
+
+  background-color: #FFFFFF;
+  margin: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #DEDEDE;
+  display: flex;
+} */
+
+/* .box-3 {
+  background-color: #FFFFFF;
+  margin: 20px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #DEDEDE;
+  display: flex;
+} */
+
+#current-range {
   padding-bottom: 15px;
   font-size: 20px;
 }
@@ -126,26 +148,6 @@ label {
 .player-input {
   padding-right: 10px;
   width: 33%;
-}
-
- /* Removed - .textbox takes care of this
-.guess-box {
-  height: 35px;
-  width: 90%;
-  border-width: 2px solid;
-} */
-
-
-.textbox-short {
-  width: 100%;
-  height: 35px;
-  border-width: 2px solid;
-}
-
-.textbox-long {
-  height: 35px;
-  border-width: 2px solid;
-  width: 185%;
 }
 
 .player-info {
@@ -195,13 +197,18 @@ h4 {
   padding-bottom: 10px;
 }
 
+/* .guess-box {
+  height: 35px;
+  width: 90%;
+  border-width: 2px solid;
+} */
 
 .current-guess {
   font-size: 20px;
 }
 
 
-.button {
+.darkbutton {
   background-color: #6E6E6E;
   color: #FFFFFF;
   border: none;
@@ -214,19 +221,28 @@ h4 {
   cursor: pointer;
 }
 
-#lightbutton {
+
+.lightbutton {
   background-color: #D1D2D4;
+  color: #FFFFFF;
+  border: none;
+  padding: 4px 26px;
+  font-weight: 800;
+  border-radius: 90px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
 }
-
-
 
 .guess {
   display: inline-block;
   text-align: center;
+  align: center;
   width: 45%;
 }
 
-.latest-score {
+#latest-score {
   text-align: left;
   padding-bottom: 10px;
 }
