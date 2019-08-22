@@ -2,6 +2,7 @@
    margin: 0;
    font-family: 'Open Sans', sans-serif;
    font-weight: 300;
+   height: auto;
 
 }
 
@@ -16,17 +17,18 @@ header {
   background-color: #404041;
   text-align: center;
   font-size: 36px;
+  font-weight: 300;
   color: #DD1972;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-/*
-Seems like this doesn't effect anything
+
+/* Seems like this doesn't effect anything
 input {
   display: block;
-}
-*/
+} */
+
 
 
 .title-bold {
@@ -54,6 +56,7 @@ input {
   width: 50%;
   float: left;
   background-color: #F7F7F7;
+  border-right: 2px solid #6E6E6E;
 }
 
 .site-right {
@@ -73,11 +76,7 @@ label {
 
 
 
-.textbox {
-  width: 100%;
-  height: 35px;
-  border-width: 2px solid;
-}
+
 
 .text-input {
   padding-left: 10px;
@@ -86,46 +85,40 @@ label {
 }
 
 .box {
-  /*Constants*/
   background-color: #FFFFFF;
   margin: 20px;
   border-style: solid;
   border-width: 2px;
   border-color: #DEDEDE;
   display: flex;
-  /*Variants*/
+}
+
+/* #site-right-boxes {
+  align-items: flex-start;
+} */
+
+#box-top-left {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 5px;
   align-items: flex-end;
 }
 
-.box-2 {
-  background-color: #FFFFFF;
-  margin: 20px;
+#box-mid-left {
   padding: 10px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #DEDEDE;
-  display: flex;
   flex-direction: column;
 }
 
-.box-3 {
-  background-color: #FFFFFF;
-  margin: 20px;
+#box-bottom-left {
   padding-top: 5px;
   padding-bottom: 20px;
   padding-left: 5px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #DEDEDE;
-  display: flex;
   align-items: flex-end;
   justify-content: space-around;
 }
 
-#current-range {
+
+.current-range {
   padding-bottom: 15px;
   font-size: 20px;
 }
@@ -133,6 +126,26 @@ label {
 .player-input {
   padding-right: 10px;
   width: 33%;
+}
+
+ /* Removed - .textbox takes care of this
+.guess-box {
+  height: 35px;
+  width: 90%;
+  border-width: 2px solid;
+} */
+
+
+.textbox-short {
+  width: 100%;
+  height: 35px;
+  border-width: 2px solid;
+}
+
+.textbox-long {
+  height: 35px;
+  border-width: 2px solid;
+  width: 185%;
 }
 
 .player-info {
@@ -182,20 +195,11 @@ h4 {
   padding-bottom: 10px;
 }
 
-.guess-box {
-  height: 35px;
-  width: 90%;
-  border-width: 2px solid;
-}
 
 .current-guess {
   font-size: 20px;
 }
-.textbox-long {
-  height: 35px;
-  border-width: 2px solid;
-  width: 185%;
-}
+
 
 .button {
   background-color: #6E6E6E;
@@ -210,14 +214,19 @@ h4 {
   cursor: pointer;
 }
 
+#lightbutton {
+  background-color: #D1D2D4;
+}
+
+
+
 .guess {
   display: inline-block;
   text-align: center;
-  align: center;
   width: 45%;
 }
 
-#latest-score {
+.latest-score {
   text-align: left;
   padding-bottom: 10px;
 }
