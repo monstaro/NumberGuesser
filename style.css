@@ -60,6 +60,7 @@ input {
 }
 
 .site-right {
+  width: 50%;
   float: right;
   background-color: #D1D2D4;
 }
@@ -91,6 +92,10 @@ label {
   border-color: #DEDEDE;
   display: flex;
 }
+
+/* #site-right-boxes {
+  align-items: flex-start;
+} */
 
 #box-top-left {
   padding-top: 20px;
@@ -212,6 +217,7 @@ h4 {
 #lightbutton {
   background-color: #D1D2D4;
 }
+
 
 
 .guess {
