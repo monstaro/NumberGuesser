@@ -3,7 +3,6 @@
    font-family: 'Open Sans', sans-serif;
    font-weight: 300;
    height: auto;
-
 }
 
 /* might remove bg color depending on functionality */
@@ -11,7 +10,6 @@
 body {
   background-color: #D1D2D4;
 }
-
 
 header {
   background-color: #404041;
@@ -57,12 +55,12 @@ input {
   float: left;
   background-color: #F7F7F7;
   border-right: 2px solid #6E6E6E;
+
 }
 
 .site-right {
   width: 50%;
   float: right;
-  background-color: #D1D2D4;
 }
 
 
