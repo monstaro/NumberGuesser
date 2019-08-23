@@ -35,23 +35,23 @@
           <h3>Challenger 1</h3>
           <div class="player-info">
             <span class="player-input"><label for="name">Name</label>
-            <input class="textbox-long" type="text"></input>
+            <input id="challeneger-one-name" class="textbox-long" type="text"></input>
             </span>
             <span class="player-input"><label for="guess">Guess</label>
-            <input class="textbox-short" type="text"></input>
+            <input id="ply-one-guess" class="textbox-short" type="text"></input>
             </span>
           </div>
           <h3>Challenger 2</h3>
           <div class="player-info">
             <span class="player-input"><label for="name">Name</label>
-            <input class="textbox-long" type="text"></input>
+            <input id="challenger-two-name" class="textbox-long" type="text"></input>
             </span>
             <span class="player-input"><label for="guess">Guess</label>
-            <input class="textbox-short" type="text"></input>
+            <input id="ply-two-guess" class="textbox-short" type="text"></input>
             </span>
           </div>
           <div class="control-button-box">
-            <input type="button" class="darkbutton" value="SUBMIT GUESS">
+            <input id="submit-button" type="button" class="darkbutton" value="SUBMIT GUESS">
             <input type="button" class="lightbutton" value="RESET GAME">
             <input type="button" class="lightbutton" value="CLEAR GAME">
           </div>
@@ -59,16 +59,16 @@
         <div class="box" id="box-bottom-left">
           <span class="guess">
           <h3 id="latest-score">Latest Score</h3>
-          <h4>Challenger 1 Name</h4>
+          <h4 id="chlg-one-name">Challenger 1 Name</h4>
           <p class="current-guess">current guess</p>
-          <span class="guessed-number"> 97 </span>
+          <span id="ply-one-pink" class="guessed-number"> 97 </span>
           <p class="guess-response"> that's too high </p>
           </span>
           <div class="vertical-line"></div>
           <span class="guess">
-          <h4>Challenger 2 Name</h4>
+          <h4 id="chlg-two-name">Challenger 2 Name</h4>
           <p class="current-guess">current guess</p>
-          <span class="guessed-number"> 3 </span>
+          <span id="ply-two-pink" class="guessed-number"> 3 </span>
           <p class="guess-response"> that's too low </p>
           </span>
         </div>
