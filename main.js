@@ -3,35 +3,46 @@
 var minSelect = document.querySelector('#minimum');
 var maxSelect = document.querySelector('#maximum');
 var updateButton = document.querySelector('#update-button');
+var newMin = minSelect.value;
+var newMax = maxSelect.value;
+var randomInteger = 0;
 
-//Changes current range text
+function randomNumGenerate () {
+  newMin = minSelect.value;
+  newMax = maxSelect.value;
+  randomInteger = Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
+}
 
-updateButton.addEventListener('click', function () {
+function replaceMin () {
   var newMin = minSelect.value;
   if (newMin >= maxSelect.value) {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  // breaking function- commented out for now
-  // else if (newMin == null) {
-  //   return return document.querySelector('#min-value').innerText = 1;
-  // }
-  // else {
+  else if (newMin == null) {
+    return document.querySelector('#min-value').innerText = '1';
+  }
+  else {
     return document.querySelector('#min-value').innerText = newMin;
-  // }
-});
+  }
+}
 
-updateButton.addEventListener('click', function () {
+function replaceMax () {
   var newMax = maxSelect.value;
-  //breaking function- commenting out for now
-  // if (newMax == null) {
-  //   return return document.querySelector('#min-value').innerText = 100;
-  // }
-    return document.querySelector('#max-value').innerText = newMax;
-});
+  if (newMax == null) {
+    return document.querySelector('#min-value').innerText = 100;
+  }
+    else {
+      return document.querySelector('#max-value').innerText = newMax;
+}}
 
+function updateClick () {
+  randomNumGenerate ();
+  replaceMin ();
+  replaceMax ();
+}
 
-
+updateButton.addEventListener('click', updateClick);
 
 
 
@@ -44,9 +55,9 @@ updateButton.addEventListener('click', function () {
 // var playerTwoName = document.querySelector('#challenger-two-name');
 // var playerOneGuess = document.querySelector('#ply-one-guess');
 // var playerTwoGuess = document.querySelector('#ply-two-guess');
-//
-// //changes player names and guesses in bottom textbox
-//
+// //
+// // //changes player names and guesses in bottom textbox
+// //
 // submitButton.addEventListener('click', function() {
 //   var challengerOneName = playerOneName.value;
 //   return document.querySelector('#chlg-one-name').innerText = challengerOneName;
