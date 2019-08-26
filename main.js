@@ -20,7 +20,7 @@ function replaceMin () {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  else if (newMin === null) {
+  else if (newMin === undefined) {
     return document.querySelector('#min-value').innerText = '1';
   }
   else {
@@ -31,7 +31,7 @@ function replaceMin () {
 // fucntion to repalce max text
 function replaceMax () {
   var newMax = maxSelect.value;
-  if (newMax === null) {
+  if (newMax === undefined) {
     return document.querySelector('#min-value').innerText = 100;
   }
     else {
@@ -115,4 +115,13 @@ submitGuessButton.addEventListener('click', changeBottomText);
 // add event listener to reset button and call randomNumGenerate functions
 
 // add event listener to clear button and make all values in box 2 undefined.
-//make text in box 3 reset to default
+//make text in box 3 reset to default.
+// add if statement that changes the color back to light if it is currently dark.
+
+
+// Example of changing a style in JS:
+// var button = document.getElementById('thisistheid').
+//
+// button.style.backgroundColor = blue;
+
+//create a new function that changes color of reset button from light to dark. add this function to the updateClick function.
