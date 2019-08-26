@@ -48,19 +48,6 @@ function updateClick () {
 // event listener to run all functions above
 updateButton.addEventListener('click', updateClick);
 
-// class for players/guesses
-class Player {
-  constructor (name, guess) {
-    if (name == undefined) {
-      this.name = 'Challenger';
-    }
-    else {
-      this.name = name;
-    }
-    this.guess = guess;
-  }
-}
-
 // global variables for bottom section. Move to top eventually.
 var playerOneName = document.getElementById('challenger-one-name');
 var playerTwoName = document.getElementById('challenger-two-name');
