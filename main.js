@@ -67,16 +67,6 @@ var playerTwoName = document.getElementById('challenger-two-name');
 var playerOneGuess = document.getElementById('ply-one-guess');
 var playerTwoGuess = document.getElementById('ply-two-guess');
 
-// functions for creating/using player info
-function createPlayers () {
-  var nameOne = playerOneName.value;
-  var nameTwo = playerTwoName.value;
-  var guessOne = playerOneGuess.value;
-  var guessTwo = playerTwoGuess.value;
-  var playerOne = new Player(nameOne, guessOne);
-  var playerTwo = new Player(nameTwo, guessTwo);
-}
-
 // global variables for text replacement in bottom box. Move to top eventually
 var nameReplaceOne = document.getElementById('chlg-one-name');
 var nameReplaceTwo = document.getElementById('chlg-two-name');
@@ -88,23 +78,23 @@ var submitGuessButton = document.getElementById('submit-button');
 
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottonText () {
-  nameReplaceOne.innerText = playerOne.name;
-  nameReplaceTwo.innerText = playerTwo.name;
-  guessReplaceOne.innerText = playerOne.guess;
-  guessReplaceTwo.innerText = playerTwo.guess;
-  if (playerOne.guess < randomInteger) {
+  nameReplaceOne.innerText = playerOneName.value;
+  nameReplaceTwo.innerText = playerTwoName.value;
+  guessReplaceOne.innerText = playerOneGuess.value;
+  guessReplaceTwo.innerText = playerTwoGuess.value;
+  if (playerOneGuess.value < randomInteger) {
     lowHighOne.innerText = "That's too low"
   }
-  if (playerOne.guess > randomInteger) {
+  if (playerOneGuess.value > randomInteger) {
     lowHighOne.innerText = "That's too high"
   }
   else {
     // this is where we can call on the winning card to appear
   }
-  if (playerTwo.guess < randomInteger) {
+  if (playerTwoGuess.value < randomInteger) {
     lowHighTwo.innerText = "That's too low"
   }
-  if (playerTwo.guess > randomInteger) {
+  if (playerTwoGuess.value > randomInteger) {
     lowHighTwo.innerText = "That's too high"
   }
   else {
@@ -112,11 +102,5 @@ function changeBottonText () {
   }
 }
 
-// function to encompass above functions
-function guessDetermination () {
-  createPlayers();
-  changeBottonText();
-}
-
 // event listen to call functions
-submitGuessButton.addEventListener('click', guessDetermination);
+submitGuessButton.addEventListener('click', changeBottonText);
