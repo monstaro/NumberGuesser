@@ -20,7 +20,7 @@ function replaceMin () {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  else if (newMin == null) {
+  else if (newMin === null) {
     return document.querySelector('#min-value').innerText = '1';
   }
   else {
@@ -31,7 +31,7 @@ function replaceMin () {
 // fucntion to repalce max text
 function replaceMax () {
   var newMax = maxSelect.value;
-  if (newMax == null) {
+  if (newMax === null) {
     return document.querySelector('#min-value').innerText = 100;
   }
     else {
@@ -65,18 +65,19 @@ var submitGuessButton = document.getElementById('submit-button');
 
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottomText () {
-  if (playerOneName.value == undefined) {
+  if (playerOneName.value === undefined) {
     nameReplaceOne.innerText = 'Challenger 1'
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
-  if (playerTwoName.value == undefined) {
+  if (playerTwoName.value === undefined) {
     nameReplaceTwo.innerText = 'Challenger 2'
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
   }
+  // split to different function?
   guessReplaceOne.innerText = playerOneGuess.value;
   guessReplaceTwo.innerText = playerTwoGuess.value;
   if (playerOneGuess.value < randomInteger) {
@@ -86,6 +87,7 @@ function changeBottomText () {
     lowHighOne.innerText = "That's too high"
   }
   else {
+    lowHighOne.innerText = 'BOOM!'
     // this is where we can call on the winning card to appear
   }
   if (playerTwoGuess.value < randomInteger) {
@@ -95,9 +97,22 @@ function changeBottomText () {
     lowHighTwo.innerText = "That's too high"
   }
   else {
+    lowHighTwo.innerText = 'BOOM!'
     // this is where we can call on the winning card to appear
   }
 }
 
+// create div/box as variable (add ids to elements that need to change)
+function winner () {
+  // append elements to site-rite.
+  // replace text within elements.
+}
+
 // event listen to call functions
 submitGuessButton.addEventListener('click', changeBottomText);
+// track number of times button is pressed
+
+// add event listener to reset button and call randomNumGenerate functions
+
+// add event listener to clear button and make all values in box 2 undefined.
+//make text in box 3 reset to default
