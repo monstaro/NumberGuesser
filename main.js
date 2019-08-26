@@ -64,9 +64,19 @@ var lowHighTwo = document.getElementById('low-or-high-two');
 var submitGuessButton = document.getElementById('submit-button');
 
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
-function changeBottonText () {
-  nameReplaceOne.innerText = playerOneName.value;
-  nameReplaceTwo.innerText = playerTwoName.value;
+function changeBottomText () {
+  if (playerOneName.value == undefined) {
+    nameReplaceOne.innerText = 'Challenger 1'
+  }
+  else {
+    nameReplaceOne.innerText = playerOneName.value;
+  }
+  if (playerTwoName.value == undefined) {
+    nameReplaceTwo.innerText = 'Challenger 2'
+  }
+  else {
+      nameReplaceTwo.innerText = playerTwoName.value;
+  }
   guessReplaceOne.innerText = playerOneGuess.value;
   guessReplaceTwo.innerText = playerTwoGuess.value;
   if (playerOneGuess.value < randomInteger) {
@@ -90,4 +100,4 @@ function changeBottonText () {
 }
 
 // event listen to call functions
-submitGuessButton.addEventListener('click', changeBottonText);
+submitGuessButton.addEventListener('click', changeBottomText);
