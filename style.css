@@ -49,6 +49,17 @@ input {
 */
 
 
+h2::before,
+h2::after {
+    display: inline-block;
+    content: "";
+    border-bottom: 1px solid white;
+    width: 4rem;
+    height: 1px;
+    transform: translateY(-1rem);
+}
+
+
 .site-left {
   width: 50%;
   float: left;
@@ -282,4 +293,8 @@ h5 {
 h6 {
   font-size: 36px;
   color: #7C7C7C;
+}
+
+.guess-amount {
+  font-weight: 700;
 }
