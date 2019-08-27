@@ -68,13 +68,13 @@ var winningPlayer = '';
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottomText () {
   if (playerOneName.value == undefined) {
-     nameReplaceOne.innerText = 'Challenger 1'
+     nameReplaceOne.innerText = 'Challenger 1';
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
   if (playerTwoName.value == undefined) {
-    nameReplaceTwo.innerText = 'Challenger 2'
+    nameReplaceTwo.innerText = 'Challenger 2';
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
@@ -150,15 +150,6 @@ function animateInBox() {
   rightBox.style.top = '0px';
 }
 
-//
-// function replaceWinName () {
-//   var chlgOne = document.getElementById('winner-box-name-one');
-//   var chlgTwo = document.getElementById('winner-box-name-two');
-//   var winName = document.getElementById('winner-name');
-//   chlgOne.innerText = playerOneName.value
-//   chlgTwo.innerText = playerTwoName.value
-//   winName.innerText = winningPlayer
-// }
 
 // event listen to call functions
 
