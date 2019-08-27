@@ -314,3 +314,28 @@ strong {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+
+@media all and (max-width:800px)
+{
+    .site-left, .siteRight, .darkbutton, .lightbutton, .siteRight
+    {
+        display: block;
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media all and (max-width:800px)
+{
+    .darkbutton, .lightbutton
+    {
+        display: block;
+        font-size: 12px;
+        padding: 2px 16px;
+        float: none;
+        width: 100%;
+        height: 100%;
+    }
+}
