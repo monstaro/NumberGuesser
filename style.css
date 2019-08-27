@@ -318,7 +318,7 @@ strong {
 
 @media all and (max-width:800px)
 {
-    .site-left, .siteRight, .darkbutton, .lightbutton, .siteRight
+    .site-left, .siteRight
     {
         display: block;
         float: none;
@@ -329,13 +329,24 @@ strong {
 
 @media all and (max-width:800px)
 {
-    .darkbutton, .lightbutton
+    .control-button-box
     {
         display: block;
+        flex-direction: column;
         font-size: 12px;
-        padding: 2px 16px;
-        float: none;
         width: 100%;
         height: 100%;
+
+    }
+}
+
+@media all and (max-width:800px)
+{
+    .darkbutton, .lightbutton
+    {
+        margin-top: 10px;
+        width: 100%;
+        height: 100%;
+
     }
 }
