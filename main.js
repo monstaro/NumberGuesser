@@ -63,15 +63,17 @@ var lowHighOne = document.getElementById('low-or-high-one');
 var lowHighTwo = document.getElementById('low-or-high-two');
 var submitGuessButton = document.getElementById('submit-button');
 
+var winningPlayer = '';
+
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottomText () {
-  if (playerOneName.value === undefined) {
+  if (playerOneName.value == undefined) {
     nameReplaceOne.innerText = 'Challenger 1'
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
-  if (playerTwoName.value === undefined) {
+  if (playerTwoName.value == undefined) {
     nameReplaceTwo.innerText = 'Challenger 2'
   }
   else {
@@ -88,6 +90,8 @@ function changeBottomText () {
   }
   else {
     lowHighOne.innerText = 'BOOM!'
+    winningPlayer = playerOneName.value;
+    winner (winningPlayer);
     // this is where we can call on the winning card to appear
   }
   if (playerTwoGuess.value < randomInteger) {
@@ -98,18 +102,66 @@ function changeBottomText () {
   }
   else {
     lowHighTwo.innerText = 'BOOM!'
+    winningPlayer = playerTwoName.value;
+    winner (winningPlayer);
     // this is where we can call on the winning card to appear
   }
 }
 
+submitGuessButton.addEventListener('click', changeBottomText);
 // create div/box as variable (add ids to elements that need to change)
-function winner () {
-  // append elements to site-rite.
-  // replace text within elements.
+function winningBox (winningPlayer) {
+  return ('<div class="right-boxes">' +
+    '<h4 class="results-box" id="winner-box-name-one">' +
+      playerOneName.value +
+    '</h4>' +
+    '<p id="vs" class="results-box">' + 'VS' + '</p>' +
+    '<h4 class="results-box" id="winner-box-name-two">' +
+      playerTwoName.value +
+    '</h4>' +
+    '<div class="horizontal-line">' +
+    '</div>' +
+    '<h5 id="winner-name">' +
+      winningPlayer +
+    '</h5>' +
+    '<h6 class="winner">' +
+      'WINNER' +
+    '</h6>' +
+    '<div class="horizontal-line">' +
+    '</div>' +
+    '<p id="guess-amount">' +
+    '<strong>' + 47 + '</strong>' +
+      'GUESSES' +
+    '</p>' +
+  '</div>');
 }
 
+
+function winner (playerName) {
+  // append elements to site-rite.
+    var siteRight = document.querySelector('.site-right');
+    siteRight.innerHTML = winningBox(playerName);
+    // animation
+    window.setTimeout(animateInBox, 300);
+}
+
+function animateInBox() {
+  var rightBox = document.querySelector('.right-boxes');
+  rightBox.style.top = '0px';
+}
+
+//
+// function replaceWinName () {
+//   var chlgOne = document.getElementById('winner-box-name-one');
+//   var chlgTwo = document.getElementById('winner-box-name-two');
+//   var winName = document.getElementById('winner-name');
+//   chlgOne.innerText = playerOneName.value
+//   chlgTwo.innerText = playerTwoName.value
+//   winName.innerText = winningPlayer
+// }
+
 // event listen to call functions
-submitGuessButton.addEventListener('click', changeBottomText);
+
 // track number of times button is pressed
 
 // add event listener to reset button and call randomNumGenerate functions
