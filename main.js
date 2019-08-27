@@ -1,4 +1,3 @@
-// global variables for changing current range
 var minSelect = document.querySelector('#minimum');
 var maxSelect = document.querySelector('#maximum');
 var updateButton = document.querySelector('#update-button');
@@ -6,14 +5,33 @@ var newMin = parseInt(minSelect.value);
 var newMax = parseInt(maxSelect.value);
 var randomInteger = 0;
 
-// function for generating the random #
+var playerOneName = document.getElementById('challenger-one-name');
+var playerTwoName = document.getElementById('challenger-two-name');
+var playerOneGuess = document.getElementById('ply-one-guess');
+var playerTwoGuess = document.getElementById('ply-two-guess');
+
+var nameReplaceOne = document.getElementById('chlg-one-name');
+var nameReplaceTwo = document.getElementById('chlg-two-name');
+var guessReplaceOne = document.getElementById('ply-one-pink');
+var guessReplaceTwo = document.getElementById('ply-two-pink');
+var lowHighOne = document.getElementById('low-or-high-one');
+var lowHighTwo = document.getElementById('low-or-high-two');
+var submitGuessButton = document.getElementById('submit-button');
+var clearButton = document.getElementById('clear-button');
+var resetButton = document.getElementById('reset-button');
+
+var winningPlayer = '';
+
+updateButton.addEventListener('click', updateClick);
+submitGuessButton.addEventListener('click', changeBottomText);
+resetButton.addEventListener('click', randomNumGenerate);
+
 function randomNumGenerate () {
   newMin = parseInt(minSelect.value);
   newMax = parseInt(maxSelect.value);
   randomInteger = Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
 }
 
-// function to replace min text
 function replaceMin () {
   var newMin = parseInt(minSelect.value);
   if (newMin >= parseInt(maxSelect.value)) {
@@ -28,7 +46,6 @@ function replaceMin () {
   }
 }
 
-// fucntion to repalce max text
 function replaceMax () {
   var newMax = parseInt(maxSelect.value);
   if (newMax === undefined) {
@@ -38,34 +55,12 @@ function replaceMax () {
       return document.querySelector('#max-value').innerText = newMax;
 }}
 
-// all function above included in this function
 function updateClick () {
   randomNumGenerate ();
   replaceMin ();
   replaceMax ();
 }
 
-// event listener to run all functions above
-updateButton.addEventListener('click', updateClick);
-
-// global variables for bottom section. Move to top eventually.
-var playerOneName = document.getElementById('challenger-one-name');
-var playerTwoName = document.getElementById('challenger-two-name');
-var playerOneGuess = document.getElementById('ply-one-guess');
-var playerTwoGuess = document.getElementById('ply-two-guess');
-
-// global variables for text replacement in bottom box. Move to top eventually
-var nameReplaceOne = document.getElementById('chlg-one-name');
-var nameReplaceTwo = document.getElementById('chlg-two-name');
-var guessReplaceOne = document.getElementById('ply-one-pink');
-var guessReplaceTwo = document.getElementById('ply-two-pink');
-var lowHighOne = document.getElementById('low-or-high-one');
-var lowHighTwo = document.getElementById('low-or-high-two');
-var submitGuessButton = document.getElementById('submit-button');
-
-var winningPlayer = '';
-
-// function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottomText () {
   if (playerOneName.value == undefined) {
      nameReplaceOne.innerText = 'Challenger 1';
@@ -92,7 +87,6 @@ function changeBottomText () {
     lowHighOne.innerText = 'BOOM!'
     winningPlayer = playerOneName.value;
     winner (winningPlayer);
-    // this is where we can call on the winning card to appear
   }
   if (parseInt(playerTwoGuess.value) < randomInteger) {
     lowHighTwo.innerText = "That's too low"
@@ -104,12 +98,9 @@ function changeBottomText () {
     lowHighTwo.innerText = 'BOOM!'
     winningPlayer = playerTwoName.value;
     winner (winningPlayer);
-    // this is where we can call on the winning card to appear
   }
 }
 
-submitGuessButton.addEventListener('click', changeBottomText);
-// create div/box as variable (add ids to elements that need to change)
 function winningBox (winningPlayer) {
   return ('<div class="right-boxes">' +
     '<h4 class="results-box" id="winner-box-name-one">' +
@@ -136,7 +127,6 @@ function winningBox (winningPlayer) {
   '</div>');
 }
 
-
 function winner (playerName) {
   // append elements to site-rite.
     var siteRight = document.querySelector('.site-right');
@@ -150,7 +140,22 @@ function animateInBox() {
   rightBox.style.top = '0px';
 }
 
+function clearFields () {
+  playerOneName.innerText === undefined;
+  playerTwoName.innerText === undefined;
+  playerOneGuess.innerText === undefined;
+  playerTwoGuess.innerText === undefined;
+}
 
+function resetValues () {
+  nameReplaceOne.innerText = 'Challenger 1';
+  nameReplaceTwo.innerText = 'Challenger 2';
+  guessReplaceOne.innerText = '97';
+  guessReplaceTwo.innerText = '3';
+}
+
+
+clearButton.addEventListener('click', clearFields);
 // event listen to call functions
 
 // track number of times button is pressed
