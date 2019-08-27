@@ -2,26 +2,26 @@
 var minSelect = document.querySelector('#minimum');
 var maxSelect = document.querySelector('#maximum');
 var updateButton = document.querySelector('#update-button');
-var newMin = minSelect.value;
-var newMax = maxSelect.value;
+var newMin = parseInt(minSelect.value);
+var newMax = parseInt(maxSelect.value);
 var randomInteger = 0;
 
 // function for generating the random #
 function randomNumGenerate () {
-  newMin = minSelect.value;
-  newMax = maxSelect.value;
+  newMin = parseInt(minSelect.value);
+  newMax = parseInt(maxSelect.value);
   randomInteger = Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
 }
 
 // function to replace min text
 function replaceMin () {
-  var newMin = minSelect.value;
-  if (newMin >= maxSelect.value) {
+  var newMin = parseInt(minSelect.value);
+  if (newMin >= parseInt(maxSelect.value)) {
     alert('Max Range must be larger than Min Range');
     return false;
   }
   else if (newMin === undefined) {
-    return document.querySelector('#min-value').innerText = '1';
+    return document.querySelector('#min-value').innerText = 1;
   }
   else {
     return document.querySelector('#min-value').innerText = newMin;
@@ -30,7 +30,7 @@ function replaceMin () {
 
 // fucntion to repalce max text
 function replaceMax () {
-  var newMax = maxSelect.value;
+  var newMax = parseInt(maxSelect.value);
   if (newMax === undefined) {
     return document.querySelector('#min-value').innerText = 100;
   }
@@ -63,53 +63,96 @@ var lowHighOne = document.getElementById('low-or-high-one');
 var lowHighTwo = document.getElementById('low-or-high-two');
 var submitGuessButton = document.getElementById('submit-button');
 
+var winningPlayer = '';
+
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottomText () {
-  if (playerOneName.value === undefined) {
-    nameReplaceOne.innerText = 'Challenger 1'
+  if (playerOneName.value == undefined) {
+     nameReplaceOne.innerText = 'Challenger 1';
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
-  if (playerTwoName.value === undefined) {
-    nameReplaceTwo.innerText = 'Challenger 2'
+  if (playerTwoName.value == undefined) {
+    nameReplaceTwo.innerText = 'Challenger 2';
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
   }
   // split to different function?
-  guessReplaceOne.innerText = playerOneGuess.value;
-  guessReplaceTwo.innerText = playerTwoGuess.value;
-  if (playerOneGuess.value < randomInteger) {
+  guessReplaceOne.innerText = parseInt(playerOneGuess.value);
+  guessReplaceTwo.innerText = parseInt(playerTwoGuess.value);
+  if (parseInt(playerOneGuess.value) < randomInteger) {
     lowHighOne.innerText = "That's too low"
   }
-  if (playerOneGuess.value > randomInteger) {
+  if (parseInt(playerOneGuess.value) > randomInteger) {
     lowHighOne.innerText = "That's too high"
   }
-  else {
+  if (parseInt(playerOneGuess.value) === randomInteger) {
     lowHighOne.innerText = 'BOOM!'
+    winningPlayer = playerOneName.value;
+    winner (winningPlayer);
     // this is where we can call on the winning card to appear
   }
-  if (playerTwoGuess.value < randomInteger) {
+  if (parseInt(playerTwoGuess.value) < randomInteger) {
     lowHighTwo.innerText = "That's too low"
   }
-  if (playerTwoGuess.value > randomInteger) {
+  if (parseInt(playerTwoGuess.value) > randomInteger) {
     lowHighTwo.innerText = "That's too high"
   }
-  else {
+  if (parseInt(playerTwoGuess.value) === randomInteger) {
     lowHighTwo.innerText = 'BOOM!'
+    winningPlayer = playerTwoName.value;
+    winner (winningPlayer);
     // this is where we can call on the winning card to appear
   }
 }
 
+submitGuessButton.addEventListener('click', changeBottomText);
 // create div/box as variable (add ids to elements that need to change)
-function winner () {
-  // append elements to site-rite.
-  // replace text within elements.
+function winningBox (winningPlayer) {
+  return ('<div class="right-boxes">' +
+    '<h4 class="results-box" id="winner-box-name-one">' +
+      playerOneName.value +
+    '</h4>' +
+    '<p id="vs" class="results-box">' + 'VS' + '</p>' +
+    '<h4 class="results-box" id="winner-box-name-two">' +
+      playerTwoName.value +
+    '</h4>' +
+    '<div class="horizontal-line">' +
+    '</div>' +
+    '<h5 id="winner-name">' +
+      winningPlayer +
+    '</h5>' +
+    '<h6 class="winner">' +
+      'WINNER' +
+    '</h6>' +
+    '<div class="horizontal-line">' +
+    '</div>' +
+    '<p id="guess-amount">' +
+    '<strong>' + 47 + '</strong>' +
+      'GUESSES' +
+    '</p>' +
+  '</div>');
 }
 
+
+function winner (playerName) {
+  // append elements to site-rite.
+    var siteRight = document.querySelector('.site-right');
+    siteRight.innerHTML = winningBox(playerName);
+    // animation
+    window.setTimeout(animateInBox, 300);
+}
+
+function animateInBox() {
+  var rightBox = document.querySelector('.right-boxes');
+  rightBox.style.top = '0px';
+}
+
+
 // event listen to call functions
-submitGuessButton.addEventListener('click', changeBottomText);
+
 // track number of times button is pressed
 
 // add event listener to reset button and call randomNumGenerate functions
