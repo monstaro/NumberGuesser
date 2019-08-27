@@ -2,26 +2,26 @@
 var minSelect = document.querySelector('#minimum');
 var maxSelect = document.querySelector('#maximum');
 var updateButton = document.querySelector('#update-button');
-var newMin = minSelect.value;
-var newMax = maxSelect.value;
+var newMin = parseInt(minSelect.value);
+var newMax = parseInt(maxSelect.value);
 var randomInteger = 0;
 
 // function for generating the random #
 function randomNumGenerate () {
-  newMin = minSelect.value;
-  newMax = maxSelect.value;
+  newMin = parseInt(minSelect.value);
+  newMax = parseInt(maxSelect.value);
   randomInteger = Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
 }
 
 // function to replace min text
 function replaceMin () {
-  var newMin = minSelect.value;
-  if (newMin >= maxSelect.value) {
+  var newMin = parseInt(minSelect.value);
+  if (newMin >= parseInt(maxSelect.value)) {
     alert('Max Range must be larger than Min Range');
     return false;
   }
   else if (newMin === undefined) {
-    return document.querySelector('#min-value').innerText = '1';
+    return document.querySelector('#min-value').innerText = 1;
   }
   else {
     return document.querySelector('#min-value').innerText = newMin;
@@ -30,7 +30,7 @@ function replaceMin () {
 
 // fucntion to repalce max text
 function replaceMax () {
-  var newMax = maxSelect.value;
+  var newMax = parseInt(maxSelect.value);
   if (newMax === undefined) {
     return document.querySelector('#min-value').innerText = 100;
   }
@@ -68,39 +68,39 @@ var winningPlayer = '';
 // function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
 function changeBottomText () {
   if (playerOneName.value == undefined) {
-    nameReplaceOne.innerText = 'Challenger 1'
+     nameReplaceOne.innerText = 'Challenger 1';
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
   if (playerTwoName.value == undefined) {
-    nameReplaceTwo.innerText = 'Challenger 2'
+    nameReplaceTwo.innerText = 'Challenger 2';
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
   }
   // split to different function?
-  guessReplaceOne.innerText = playerOneGuess.value;
-  guessReplaceTwo.innerText = playerTwoGuess.value;
-  if (playerOneGuess.value < randomInteger) {
+  guessReplaceOne.innerText = parseInt(playerOneGuess.value);
+  guessReplaceTwo.innerText = parseInt(playerTwoGuess.value);
+  if (parseInt(playerOneGuess.value) < randomInteger) {
     lowHighOne.innerText = "That's too low"
   }
-  if (playerOneGuess.value > randomInteger) {
+  if (parseInt(playerOneGuess.value) > randomInteger) {
     lowHighOne.innerText = "That's too high"
   }
-  else {
+  if (parseInt(playerOneGuess.value) === randomInteger) {
     lowHighOne.innerText = 'BOOM!'
     winningPlayer = playerOneName.value;
     winner (winningPlayer);
     // this is where we can call on the winning card to appear
   }
-  if (playerTwoGuess.value < randomInteger) {
+  if (parseInt(playerTwoGuess.value) < randomInteger) {
     lowHighTwo.innerText = "That's too low"
   }
-  if (playerTwoGuess.value > randomInteger) {
+  if (parseInt(playerTwoGuess.value) > randomInteger) {
     lowHighTwo.innerText = "That's too high"
   }
-  else {
+  if (parseInt(playerTwoGuess.value) === randomInteger) {
     lowHighTwo.innerText = 'BOOM!'
     winningPlayer = playerTwoName.value;
     winner (winningPlayer);
@@ -150,15 +150,6 @@ function animateInBox() {
   rightBox.style.top = '0px';
 }
 
-//
-// function replaceWinName () {
-//   var chlgOne = document.getElementById('winner-box-name-one');
-//   var chlgTwo = document.getElementById('winner-box-name-two');
-//   var winName = document.getElementById('winner-name');
-//   chlgOne.innerText = playerOneName.value
-//   chlgTwo.innerText = playerTwoName.value
-//   winName.innerText = winningPlayer
-// }
 
 // event listen to call functions
 
