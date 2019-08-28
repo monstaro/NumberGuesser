@@ -1,99 +1,88 @@
+// global variables for changing current range
 var minSelect = document.querySelector('#minimum');
 var maxSelect = document.querySelector('#maximum');
-
 var updateButton = document.querySelector('#update-button');
-
 var newMin = parseInt(minSelect.value);
 var newMax = parseInt(maxSelect.value);
-
 var randomInteger = 0;
 
-var playerOneName = document.getElementById('challenger-one-name');
-var playerTwoName = document.getElementById('challenger-two-name');
-
-var playerOneGuess = document.getElementById('ply-one-guess');
-var playerTwoGuess = document.getElementById('ply-two-guess');
-
-var nameReplaceOne = document.getElementById('chlg-one-name');
-var nameReplaceTwo = document.getElementById('chlg-two-name');
-
-var guessReplaceOne = document.getElementById('ply-one-pink');
-var guessReplaceTwo = document.getElementById('ply-two-pink');
-
-var lowHighOne = document.getElementById('low-or-high-one');
-var lowHighTwo = document.getElementById('low-or-high-two');
-
-var submitGuessButton = document.getElementById('submit-button');
-
-var clearButton = document.getElementById('clear-button');
-var resetButton = document.getElementById('reset-button');
-
-var winningPlayer = '';
-
-updateButton.addEventListener('click', updateClick);
-submitGuessButton.addEventListener('click', changeBottomText);
-resetButton.addEventListener('click', randomNumGenerate);
-clearButton.addEventListener('click', clearFieldsClick);
-
+// function for generating the random #
 function randomNumGenerate () {
   newMin = parseInt(minSelect.value);
   newMax = parseInt(maxSelect.value);
-  resetButton.style.backgroundColor = '#6E6E6E';
   randomInteger = Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
 }
 
+// function to replace min text
 function replaceMin () {
   var newMin = parseInt(minSelect.value);
-  var minText = document.querySelector('#min-value');
   if (newMin >= parseInt(maxSelect.value)) {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  else if (newMin == undefined) {
-    minText.innerText = 1;
+  else if (newMin === undefined) {
+    return document.querySelector('#min-value').innerText = 1;
   }
   else {
-    minText.innerText = newMin;
+    return document.querySelector('#min-value').innerText = newMin;
   }
 }
 
+// fucntion to repalce max text
 function replaceMax () {
   var newMax = parseInt(maxSelect.value);
-  var maxText = document.querySelector('#max-value');
-  if (newMax == undefined) {
-    maxText.innerText = 100;
+  if (newMax === undefined) {
+    return document.querySelector('#min-value').innerText = 100;
   }
-  else {
-    maxText.innerText = newMax;
+    else {
+      return document.querySelector('#max-value').innerText = newMax;
 }}
 
+// all function above included in this function
 function updateClick () {
   randomNumGenerate ();
   replaceMin ();
   replaceMax ();
 }
 
-function changeBottomText () {
-  clearButton.style.backgroundColor = '#6E6E6E';
-  changeBottomTextName();
-  changeBottomTextGuess();
-}
+// event listener to run all functions above
+updateButton.addEventListener('click', updateClick);
 
-function changeBottomTextName () {
-  if (playerOneName.value == null) {
-    nameReplaceOne.innerText = 'Challenger 1';
+// global variables for bottom section. Move to top eventually.
+var playerOneName = document.getElementById('challenger-one-name');
+var playerTwoName = document.getElementById('challenger-two-name');
+var playerOneGuess = document.getElementById('ply-one-guess');
+var playerTwoGuess = document.getElementById('ply-two-guess');
+
+// global variables for text replacement in bottom box. Move to top eventually
+var nameReplaceOne = document.getElementById('chlg-one-name');
+var nameReplaceTwo = document.getElementById('chlg-two-name');
+var guessReplaceOne = document.getElementById('ply-one-pink');
+var guessReplaceTwo = document.getElementById('ply-two-pink');
+var lowHighOne = document.getElementById('low-or-high-one');
+var lowHighTwo = document.getElementById('low-or-high-two');
+var submitGuessButton = document.getElementById('submit-button');
+
+var winningPlayer = '';
+
+
+
+
+// function for text replacement/determining winner. We might want to break this out into two functions (one for each player)
+function changeBottomText () {
+  if (playerOneName.value == undefined) {
+     nameReplaceOne.innerText = 'Challenger 1';
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
-  if (playerTwoName.value == null) {
-     nameReplaceTwo.innerText = 'Challenger 2';
+  if (playerTwoName.value == undefined) {
+    nameReplaceTwo.innerText = 'Challenger 2';
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
-  }}
-
-function changeBottomTextGuess () {
+  }
+  // split to different function?
   guessReplaceOne.innerText = parseInt(playerOneGuess.value);
   guessReplaceTwo.innerText = parseInt(playerTwoGuess.value);
   if (parseInt(playerOneGuess.value) < randomInteger) {
@@ -106,6 +95,7 @@ function changeBottomTextGuess () {
     lowHighOne.innerText = 'BOOM!'
     winningPlayer = playerOneName.value;
     winner (winningPlayer);
+    // this is where we can call on the winning card to appear
   }
   if (parseInt(playerTwoGuess.value) < randomInteger) {
     lowHighTwo.innerText = "That's too low"
@@ -117,9 +107,12 @@ function changeBottomTextGuess () {
     lowHighTwo.innerText = 'BOOM!'
     winningPlayer = playerTwoName.value;
     winner (winningPlayer);
+    // this is where we can call on the winning card to appear
   }
 }
 
+submitGuessButton.addEventListener('click', changeBottomText);
+// create div/box as variable (add ids to elements that need to change)
 function winningBox (winningPlayer) {
   return ('<div class="right-boxes">' +
     '<h4 class="results-box" id="winner-box-name-one">' +
@@ -146,9 +139,12 @@ function winningBox (winningPlayer) {
   '</div>');
 }
 
+
 function winner (playerName) {
+  // append elements to site-rite.
     var siteRight = document.querySelector('.site-right');
     siteRight.innerHTML = winningBox(playerName);
+    // animation
     window.setTimeout(animateInBox, 300);
 }
 
@@ -157,25 +153,6 @@ function animateInBox() {
   rightBox.style.top = '0px';
 }
 
-function clearFieldsClick () {
-  clearFields ();
-  resetValues ();
-}
-
-function clearFields () {
-  clearButton.style.backgroundColor = '#D1D2D4';
-  playerOneName.value = null;
-  playerTwoName.value = null;
-  playerOneGuess.value = null;
-  playerTwoGuess.value = null;
-}
-
-function resetValues () {
-  nameReplaceOne.innerText = 'Challenger 1';
-  nameReplaceTwo.innerText = 'Challenger 2';
-  guessReplaceOne.innerText = '97';
-  guessReplaceTwo.innerText = '3';
-}
 
 // event listen to call functions
 
