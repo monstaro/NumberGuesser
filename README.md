@@ -1,17 +1,11 @@
 # NumberGuesser
 Cam and Cody
 
+## How To Play
 
-We are building a number guessing game.
+1) We first need to select our range by entering a minimum and maximum in boxes 1 and 2 respectively. Once you have set a min and max, hit the update button in box 3 on the right. The numbers in box 4 will update to show the current range and a random number will be generated between these two values.
 
-**Day 1** - we drafted a HTML skeleton and added CSS styling. That part is about halfway complete. 
-***Goals:*** Fix display positioning in boxes. Set Range box needs the labels to go above the boxes, while the boxes display inline.
-
-For some reason the buttons in the mid-left box look a different shape than the button in the top-left box, even though they have the same class.
-
-General formatting for the rest of the boxes.
-  
-![Day 1](https://i.ibb.co/6WyJx5B/Untitled-2.png)
+<img width="684" alt="Screen Shot 2019-08-28 at 1 27 04 PM" src="https://user-images.githubusercontent.com/47998896/63886370-934c3300-c997-11e9-88a9-283b074bd287.png">
 
 
 The project turned out to have its fair share of ups and downs. Some things were accomplished easily, some things took a couple of days to figure out. Most of the issues were based in syntax, git confusion, and things along those lines. 
