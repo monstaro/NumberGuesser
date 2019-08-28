@@ -33,7 +33,7 @@ var winningPlayer = '';
 updateButton.addEventListener('click', updateClick);
 submitGuessButton.addEventListener('click', changeBottomText);
 resetButton.addEventListener('click', randomNumGenerate);
-clearButton.addEventListener('click', clearFields);
+clearButton.addEventListener('click', clearFieldsClick);
 
 function randomNumGenerate () {
   newMin = parseInt(minSelect.value);
@@ -44,25 +44,27 @@ function randomNumGenerate () {
 
 function replaceMin () {
   var newMin = parseInt(minSelect.value);
+  var minText = document.querySelector('#min-value');
   if (newMin >= parseInt(maxSelect.value)) {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  else if (newMin === undefined) {
-    return document.querySelector('#min-value').innerText = 1;
+  else if (newMin == undefined) {
+    minText.innerText = 1;
   }
   else {
-    return document.querySelector('#min-value').innerText = newMin;
+    minText.innerText = newMin;
   }
 }
 
 function replaceMax () {
   var newMax = parseInt(maxSelect.value);
-  if (newMax === undefined) {
-    return document.querySelector('#min-value').innerText = 100;
+  var maxText = document.querySelector('#max-value');
+  if (newMax == undefined) {
+    maxText.innerText = 100;
   }
-    else {
-      return document.querySelector('#max-value').innerText = newMax;
+  else {
+    maxText.innerText = newMax;
 }}
 
 function updateClick () {
@@ -73,6 +75,11 @@ function updateClick () {
 
 function changeBottomText () {
   clearButton.style.backgroundColor = '#6E6E6E';
+  changeBottomTextName();
+  changeBottomTextGuess();
+}
+
+function changeBottomTextName () {
   if (playerOneName.value == null) {
     nameReplaceOne.innerText = 'Challenger 1';
   }
@@ -84,8 +91,9 @@ function changeBottomText () {
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
-  }
-  // split to different function?
+  }}
+
+function changeBottomTextGuess () {
   guessReplaceOne.innerText = parseInt(playerOneGuess.value);
   guessReplaceTwo.innerText = parseInt(playerTwoGuess.value);
   if (parseInt(playerOneGuess.value) < randomInteger) {
@@ -147,6 +155,11 @@ function winner (playerName) {
 function animateInBox() {
   var rightBox = document.querySelector('.right-boxes');
   rightBox.style.top = '0px';
+}
+
+function clearFieldsClick () {
+  clearFields ();
+  resetValues ();
 }
 
 function clearFields () {
