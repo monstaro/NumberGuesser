@@ -1,11 +1,8 @@
 * {
-   margin: 0;
-   font-family: 'Open Sans', sans-serif;
-   font-weight: 300;
-
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
-
-/* might remove bg color depending on functionality */
 
 body {
   background-color: #D1D2D4;
@@ -20,45 +17,26 @@ header {
   padding-bottom: 10px;
 }
 
-/*
-Seems like this doesn't effect anything
-input {
-  display: block;
-}
-*/
-
-
 .title-bold {
   font-weight: 700;
   color: #DD1972;
   background-color: #404041;
 }
 
-
 .sub-header {
   font-size: 18px;
   color: white;
 }
 
- /* Trying to extend the dash in the subheader. Not working yet.
-
-.dash {
-  transform: scaleX(5);
-}
-
-*/
-
-
 h2::before,
 h2::after {
-    display: inline-block;
-    content: "";
-    border-bottom: 1px solid white;
-    width: 5rem;
-    height: 1px;
-    transform: translateY(-0.4rem);
+  display: inline-block;
+  content: "";
+  border-bottom: 1px solid white;
+  width: 5rem;
+  height: 1px;
+  transform: translateY(-0.4rem);
 }
-
 
 .site-left {
   width: 50%;
@@ -72,8 +50,6 @@ h2::after {
   text-align: center;
   transition: 5s;
 }
-
-
 
 label {
   display: block;
@@ -109,11 +85,11 @@ label {
   align-items: flex-end;
 }
 
-
-#box-mid-left {padding: 10px;
+#box-mid-left {
+  padding: 10px;
   flex-direction: column;
+  padding: 10px;
 }
-
 
 #box-bottom-left {
   align-items: flex-end;
@@ -124,34 +100,13 @@ label {
 }
 
 .box {
-  /*Constants*/
   background-color: #FFFFFF;
   margin: 20px;
   border-style: solid;
   border-width: 2px;
   border-color: #DEDEDE;
   display: flex;
-  /*Variants*/
 }
-
-/* .box-2 {
-
-  background-color: #FFFFFF;
-  margin: 20px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #DEDEDE;
-  display: flex;
-} */
-
-/* .box-3 {
-  background-color: #FFFFFF;
-  margin: 20px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #DEDEDE;
-  display: flex;
-} */
 
 #current-range {
   padding-bottom: 15px;
@@ -210,16 +165,9 @@ h4 {
   padding-bottom: 10px;
 }
 
-/* .guess-box {
-  height: 35px;
-  width: 90%;
-  border-width: 2px solid;
-} */
-
 .current-guess {
   font-size: 20px;
 }
-
 
 .darkbutton {
   background-color: #6E6E6E;
@@ -316,39 +264,29 @@ strong {
   padding-right: 10px;
 }
 
-
-@media all and (max-width:800px)
-{
-    .site-left, .siteRight
-    {
-        display: block;
-        float: none;
-        width: 100%;
-        height: 100%;
-    }
+@media all and (max-width:800px) {
+  .site-left, .siteRight {
+    display: block;
+    float: none;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-@media all and (max-width:1000px)
-{
-    .control-button-box
-    {
-        display: block;
-        flex-direction: column;
-        font-size: 12px;
-        width: 100%;
-        height: 100%;
-
-    }
+@media all and (max-width:1000px) {
+  .control-button-box {
+    display: block;
+    flex-direction: column;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-@media all and (max-width:1000px)
-{
-    .darkbutton, .lightbutton
-    {
-        margin-top: 10px;
-        width: 100%;
-        height: 100%;
-
-
-    }
+@media all and (max-width:1000px) {
+  .darkbutton, .lightbutton {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
 }
