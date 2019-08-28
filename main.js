@@ -72,6 +72,7 @@ function updateClick () {
 }
 
 function changeBottomText () {
+  clearButton.style.backgroundColor = '#6E6E6E';
   if (playerOneName.value == null) {
     nameReplaceOne.innerText = 'Challenger 1';
   }
@@ -138,10 +139,8 @@ function winningBox (winningPlayer) {
 }
 
 function winner (playerName) {
-  // append elements to site-rite.
     var siteRight = document.querySelector('.site-right');
     siteRight.innerHTML = winningBox(playerName);
-    // animation
     window.setTimeout(animateInBox, 300);
 }
 
@@ -151,6 +150,7 @@ function animateInBox() {
 }
 
 function clearFields () {
+  clearButton.style.backgroundColor = '#D1D2D4';
   playerOneName.value = null;
   playerTwoName.value = null;
   playerOneGuess.value = null;
