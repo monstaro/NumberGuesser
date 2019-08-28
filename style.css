@@ -54,9 +54,9 @@ h2::after {
     display: inline-block;
     content: "";
     border-bottom: 1px solid white;
-    width: 4rem;
+    width: 5rem;
     height: 1px;
-    transform: translateY(-1rem);
+    transform: translateY(-0.4rem);
 }
 
 
