@@ -49,7 +49,7 @@ function replaceMin () {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  else if (newMin == undefined) {
+  else if (newMin === undefined) {
     minText.innerText = 1;
   }
   else {
@@ -60,7 +60,7 @@ function replaceMin () {
 function replaceMax () {
   var newMax = parseInt(maxSelect.value);
   var maxText = document.querySelector('#max-value');
-  if (newMax == undefined) {
+  if (newMax === undefined) {
     maxText.innerText = 100;
   }
   else {
@@ -77,25 +77,24 @@ function changeBottomText () {
   clearButton.style.backgroundColor = '#6E6E6E';
   changeBottomTextName();
   changeBottomTextGuess();
+  changeBottomTextHint ();
 }
 
 function changeBottomTextName () {
-  if (playerOneName.value == null) {
+  if (playerOneName.value === '') {
     nameReplaceOne.innerText = 'Challenger 1';
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
-  if (playerTwoName.value == null) {
+  if (playerTwoName.value === '') {
      nameReplaceTwo.innerText = 'Challenger 2';
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
   }}
 
-function changeBottomTextGuess () {
-  guessReplaceOne.innerText = parseInt(playerOneGuess.value);
-  guessReplaceTwo.innerText = parseInt(playerTwoGuess.value);
+function changeBottomTextHint () {
   if (parseInt(playerOneGuess.value) < randomInteger) {
     lowHighOne.innerText = "That's too low"
   }
@@ -117,6 +116,21 @@ function changeBottomTextGuess () {
     lowHighTwo.innerText = 'BOOM!'
     winningPlayer = playerTwoName.value;
     winner (winningPlayer);
+  }
+}
+
+function changeBottomTextGuess () {
+  if (playerOneGuess.value === '') {
+    guessReplaceOne.innerText = 97;
+  }
+  else {
+    guessReplaceOne.innerText = parseInt(playerOneGuess.value);
+  }
+  if (playerTwoGuess.value === '') {
+    guessReplaceTwo.innerText = 3;
+  }
+  else {
+    guessReplaceTwo.innerText = parseInt(playerTwoGuess.value);
   }
 }
 
@@ -176,21 +190,3 @@ function resetValues () {
   guessReplaceOne.innerText = '97';
   guessReplaceTwo.innerText = '3';
 }
-
-// event listen to call functions
-
-// track number of times button is pressed
-
-// add event listener to reset button and call randomNumGenerate functions
-
-// add event listener to clear button and make all values in box 2 undefined.
-//make text in box 3 reset to default.
-// add if statement that changes the color back to light if it is currently dark.
-
-
-// Example of changing a style in JS:
-// var button = document.getElementById('thisistheid').
-//
-// button.style.backgroundColor = blue;
-
-//create a new function that changes color of reset button from light to dark. add this function to the updateClick function.
