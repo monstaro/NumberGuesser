@@ -49,7 +49,7 @@ function replaceMin () {
     alert('Max Range must be larger than Min Range');
     return false;
   }
-  else if (newMin === undefined) {
+  if (isNaN(newMin)) {
     minText.innerText = 1;
   }
   else {
@@ -60,7 +60,7 @@ function replaceMin () {
 function replaceMax () {
   var newMax = parseInt(maxSelect.value);
   var maxText = document.querySelector('#max-value');
-  if (newMax === undefined) {
+  if (isNaN(newMax)) {
     maxText.innerText = 100;
   }
   else {
