@@ -1,22 +1,30 @@
 var minSelect = document.querySelector('#minimum');
 var maxSelect = document.querySelector('#maximum');
+
 var updateButton = document.querySelector('#update-button');
+
 var newMin = parseInt(minSelect.value);
 var newMax = parseInt(maxSelect.value);
+
 var randomInteger = 0;
 
 var playerOneName = document.getElementById('challenger-one-name');
 var playerTwoName = document.getElementById('challenger-two-name');
+
 var playerOneGuess = document.getElementById('ply-one-guess');
 var playerTwoGuess = document.getElementById('ply-two-guess');
 
 var nameReplaceOne = document.getElementById('chlg-one-name');
 var nameReplaceTwo = document.getElementById('chlg-two-name');
+
 var guessReplaceOne = document.getElementById('ply-one-pink');
 var guessReplaceTwo = document.getElementById('ply-two-pink');
+
 var lowHighOne = document.getElementById('low-or-high-one');
 var lowHighTwo = document.getElementById('low-or-high-two');
+
 var submitGuessButton = document.getElementById('submit-button');
+
 var clearButton = document.getElementById('clear-button');
 var resetButton = document.getElementById('reset-button');
 
@@ -25,10 +33,12 @@ var winningPlayer = '';
 updateButton.addEventListener('click', updateClick);
 submitGuessButton.addEventListener('click', changeBottomText);
 resetButton.addEventListener('click', randomNumGenerate);
+clearButton.addEventListener('click', clearFields);
 
 function randomNumGenerate () {
   newMin = parseInt(minSelect.value);
   newMax = parseInt(maxSelect.value);
+  resetButton.style.backgroundColor = '#6E6E6E';
   randomInteger = Math.floor(Math.random() * (newMax - newMin + 1) + newMin);
 }
 
@@ -62,14 +72,14 @@ function updateClick () {
 }
 
 function changeBottomText () {
-  if (playerOneName.value == undefined) {
-     nameReplaceOne.innerText = 'Challenger 1';
+  if (playerOneName.value == null) {
+    nameReplaceOne.innerText = 'Challenger 1';
   }
   else {
     nameReplaceOne.innerText = playerOneName.value;
   }
-  if (playerTwoName.value == undefined) {
-    nameReplaceTwo.innerText = 'Challenger 2';
+  if (playerTwoName.value == null) {
+     nameReplaceTwo.innerText = 'Challenger 2';
   }
   else {
       nameReplaceTwo.innerText = playerTwoName.value;
@@ -141,10 +151,10 @@ function animateInBox() {
 }
 
 function clearFields () {
-  playerOneName.innerText === undefined;
-  playerTwoName.innerText === undefined;
-  playerOneGuess.innerText === undefined;
-  playerTwoGuess.innerText === undefined;
+  playerOneName.value = null;
+  playerTwoName.value = null;
+  playerOneGuess.value = null;
+  playerTwoGuess.value = null;
 }
 
 function resetValues () {
@@ -154,8 +164,6 @@ function resetValues () {
   guessReplaceTwo.innerText = '3';
 }
 
-
-clearButton.addEventListener('click', clearFields);
 // event listen to call functions
 
 // track number of times button is pressed
