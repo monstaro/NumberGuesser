@@ -1,86 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap" rel="stylesheet">
   <title>Number Guesser Game</title>
-  </head>
-  <body>
-    <section id="header">
-      <header>
-        <h1><span class="title-bold">NUMBER</span>GUESSER</h1>
-        <h2 class="sub-header"> ULTIMATE CHALLENGER EDITION </h2>
-      </header>
-    </section>
-    <div class="background">
+</head>
+
+<body>
+  <section id="header">
+    <header>
+      <h1><span class="title-bold">NUMBER</span>GUESSER</h1>
+      <h2 class="sub-header"> ULTIMATE CHALLENGER EDITION </h2>
+    </header>
+  </section>
+  <div class="background">
     <section class="site-left">
       <div class="box" id="box-top-left">
         <span class="text-input">
-        <h3>Set Range</h3>
+          <h3>Set Range</h3>
           <label for="min-range">Min Range</label>
-            <input id="minimum" class="textbox-short" type="text"></input>
-          </span>
-            <span class="text-input"><label for="max-range">Max Range</label>
-            <input id="maximum" class="textbox-short" type="text"></input>
-          </span>
-          <span class="text-input">
-            <input id="update-button" type="button" class="darkbutton" value="UPDATE"></input>
-          </span>
+          <input id="minimum" class="textbox-short" type="text"></input>
+        </span>
+        <span class="text-input"><label for="max-range">Max Range</label>
+          <input id="maximum" class="textbox-short" type="text"></input>
+        </span>
+        <span class="text-input">
+          <input id="update-button" type="button" class="darkbutton" value="UPDATE"></input>
+        </span>
       </div>
       <div class="box" id="box-mid-left">
         <p id="current-range">The Current Range is <span id="min-value" class="bold-underline">1</span> to <span id="max-value" class="bold-underline">100</span></p>
-          <h3>Challenger 1</h3>
-          <div class="player-info">
-            <span class="player-input"><label for="name">Name</label>
-            <input value="" id="challenger-one-name" class="textbox-long" type="text"></input>
-            </span>
-            <span class="player-input"><label for="guess">Guess</label>
+        <h3>Challenger 1</h3>
+        <div class="player-info">
+          <span class="player-input"><label for="name">Name</label>
+            <input id="challenger-one-name" class="textbox-long" type="text"></input>
+          </span>
+          <span class="player-input"><label for="guess">Guess</label>
             <input id="ply-one-guess" class="textbox-short" type="text"></input>
-            </span>
-          </div>
-          <h3>Challenger 2</h3>
-          <div class="player-info">
-            <span class="player-input"><label for="name">Name</label>
-            <input id="challenger-two-name" class="textbox-long" type="text"></input>
-            </span>
-            <span class="player-input"><label for="guess">Guess</label>
-            <input id="ply-two-guess" class="textbox-short" type="text"></input>
-            </span>
-          </div>
-          <div class="control-button-box">
-            <input id="submit-button" type="button" class="darkbutton" value="SUBMIT GUESS">
-            <input id="reset-button" type="button" class="lightbutton" value="RESET GAME">
-            <input id="clear-button" type="button" class="lightbutton" value="CLEAR GAME">
-          </div>
+          </span>
         </div>
-        <div class="box" id="box-bottom-left">
-          <span class="guess">
+        <h3>Challenger 2</h3>
+        <div class="player-info">
+          <span class="player-input"><label for="name">Name</label>
+            <input id="challenger-two-name" class="textbox-long" type="text"></input>
+          </span>
+          <span class="player-input"><label for="guess">Guess</label>
+            <input id="ply-two-guess" class="textbox-short" type="text"></input>
+          </span>
+        </div>
+        <div class="control-button-box">
+          <input id="submit-button" type="button" class="darkbutton" value="SUBMIT GUESS">
+          <input type="button" class="lightbutton" value="RESET GAME">
+          <input type="button" class="lightbutton" id="clearButton" value="CLEAR GAME">
+        </div>
+      </div>
+      <div class="box" id="box-bottom-left">
+        <span class="guess">
           <h3 id="latest-score">Latest Score</h3>
           <h4 id="chlg-one-name">Challenger 1 Name</h4>
           <p class="current-guess">current guess</p>
           <span id="ply-one-pink" class="guessed-number"> 97 </span>
           <p id="low-or-high-one" class="guess-response"> that's too high </p>
-          </span>
-          <div class="vertical-line"></div>
-          <span class="guess">
+        </span>
+        <div class="vertical-line"></div>
+        <span class="guess">
           <h4 id="chlg-two-name">Challenger 2 Name</h4>
           <p class="current-guess">current guess</p>
           <span id="ply-two-pink" class="guessed-number"> 3 </span>
           <p id="low-or-high-two" class="guess-response"> that's too low </p>
-          </span>
-        </div>
-      </section>
-      <section class="site-right">
-      </section>
-    </div>
-    <script src="main.js"></script>
-  </body>
+        </span>
+      </div>
+    </section>
+    <section class="site-right">
+    </section>
+  </div>
+  <script src="main.js"></script>
+</body>
+
 </html>
-
-
-<!-- Questions
-      1. What tag is more appropriate for this sort of text? h1/h2/h3 or p?
-      2. Regarding the upper-case elements like <header>, is it semantically better to type in regular case,
-      and style with CSS to make upper case?
--->
