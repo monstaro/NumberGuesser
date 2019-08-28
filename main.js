@@ -30,12 +30,15 @@ var resetButton = document.getElementById('reset-button');
 
 var winningPlayer = '';
 
+var guessAmount = 0;
+
 updateButton.addEventListener('click', updateClick);
 submitGuessButton.addEventListener('click', changeBottomText);
 resetButton.addEventListener('click', randomNumGenerate);
 clearButton.addEventListener('click', clearFieldsClick);
 
 function randomNumGenerate () {
+  guessAmount = 0;
   newMin = parseInt(minSelect.value);
   newMax = parseInt(maxSelect.value);
   resetButton.style.backgroundColor = '#6E6E6E';
@@ -74,6 +77,7 @@ function updateClick () {
 }
 
 function changeBottomText () {
+  guessAmount++;
   clearButton.style.backgroundColor = '#6E6E6E';
   changeBottomTextName();
   changeBottomTextGuess();
@@ -154,7 +158,7 @@ function winningBox (winningPlayer) {
     '<div class="horizontal-line">' +
     '</div>' +
     '<p id="guess-amount">' +
-    '<strong>' + 47 + '</strong>' +
+    '<strong>' + guessAmount + '</strong>' +
       'GUESSES' +
     '</p>' +
   '</div>');
